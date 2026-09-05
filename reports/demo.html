@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Reddit Pain Radar — Rapport d'opportunités</title>
+<style>
+    body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem 1.5rem 4rem; color: #1a1a2e; background: #f7f7fb; }
+    h1 { font-size: 1.8rem; }
+    .disclaimer { background: #fff3cd; border: 1px solid #ffe08a; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; }
+    .opportunity-card { background: #fff; border: 1px solid #e2e2ee; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .opportunity-card header { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-bottom: 1rem; }
+    .opportunity-card h2 { flex: 1 1 100%; margin: 0 0 0.25rem; }
+    .score-badge { background: #4338ca; color: white; padding: 0.25rem 0.6rem; border-radius: 999px; font-weight: 600; font-size: 0.85rem; }
+    .confidence { padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
+    .confidence-high { background: #d1fae5; color: #065f46; }
+    .confidence-medium { background: #fef3c7; color: #92400e; }
+    .confidence-low { background: #fee2e2; color: #991b1b; }
+    .market-evidence { font-size: 0.85rem; color: #555; }
+    .problem-statement { font-style: italic; font-size: 1.05rem; }
+    .evidence-list { list-style: none; padding: 0; }
+    .evidence-item { border-left: 3px solid #4338ca; padding-left: 0.75rem; margin-bottom: 0.75rem; }
+    .evidence-meta { color: #666; font-size: 0.85rem; }
+    blockquote { margin: 0.35rem 0 0; color: #333; }
+    .hypothesis-warning { background: #fff3cd; padding: 0.75rem; border-radius: 8px; }
+    footer { margin-top: 3rem; font-size: 0.8rem; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+  <h1>Reddit Pain Radar — Rapport d'Opportunités</h1>
+  <p>Généré le 2026-09-05T13:04:12.250650+00:00 — Source : fixture: fixtures/sample_posts.json</p>
+  <div class="disclaimer">
+    <strong>Avertissement</strong> : Ce rapport analyse des discussions publiques sur Reddit (échantillon fixture ou flux RSS bornés). Le nombre de posts/auteurs Reddit ne constitue en aucun cas une estimation de marché (TAM/SAM/SOM). Toute taille de marché mentionnée ci-dessous est une hypothèse à valider avec des sources externes.
+  </div>
+  
+    <article class="opportunity-card">
+      <header>
+        <h2>#1 — outils trop chers</h2>
+        <div class="score-badge">Score : 55.3/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : modérée</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">I manually copy-paste data from our CRM export into Google Sheets every single day, it&#x27;s such manual work and there&#x27;s no solution for our budget.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>2 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 2 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 301.</li><li>5/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution, willingness_to_pay.</li><li>2 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/excel/syn005" target="_blank" rel="noopener noreferrer">https://reddit.com/r/excel/syn005</a> — <span class="evidence-meta">u/eli_ops · r/excel</span><blockquote>I manually copy-paste data from our CRM export into Google Sheets every single day, it&#x27;s such manual work and there&#x27;s no solution for our budget. Willing to pay for anything that…</blockquote></li><li class="evidence-item"><a href="https://reddit.com/r/startups/syn009" target="_blank" rel="noopener noreferrer">https://reddit.com/r/startups/syn009</a> — <span class="evidence-meta">u/ivan_support · r/startups</span><blockquote>Our small team manually replies to nearly identical customer support emails every day. It&#x27;s incredibly manual work and there&#x27;s no solution within our budget, the AI helpdesk…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/excel, r/startups, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « I manually copy-paste data from our CRM export into Google Sheets every single day, it&#x27;s such manual work and there&#x27;s no solution for our budget. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#2 — support client</h2>
+        <div class="score-badge">Score : 44.8/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">We manually sort and tag every incoming support ticket by hand because we can&#x27;t afford the expensive helpdesk suites.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 90.</li><li>5/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/CustomerSuccess/syn010" target="_blank" rel="noopener noreferrer">https://reddit.com/r/CustomerSuccess/syn010</a> — <span class="evidence-meta">u/jae_cx · r/CustomerSuccess</span><blockquote>We manually sort and tag every incoming support ticket by hand because we can&#x27;t afford the expensive helpdesk suites. So frustrating, there is no lightweight missing solution for…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/CustomerSuccess, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « We manually sort and tag every incoming support ticket by hand because we can&#x27;t afford the expensive helpdesk suites. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#3 — saisie de données manuelle</h2>
+        <div class="score-badge">Score : 44.6/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">I get dozens of supplier PDFs weekly and manually type the numbers into a spreadsheet.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 75.</li><li>5/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/dataanalysis/syn006" target="_blank" rel="noopener noreferrer">https://reddit.com/r/dataanalysis/syn006</a> — <span class="evidence-meta">u/farah_analytics · r/dataanalysis</span><blockquote>I get dozens of supplier PDFs weekly and manually type the numbers into a spreadsheet. It is extremely manual and there is no missing solution for small teams, all the OCR tools…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/dataanalysis, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « I get dozens of supplier PDFs weekly and manually type the numbers into a spreadsheet. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#4 — outils trop chers</h2>
+        <div class="score-badge">Score : 42.1/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">There is no solution priced for solo founders.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 322.</li><li>4/5 catégories de signaux de douleur détectées : expensive_tools, frustration, missing_solution, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/startups/syn007" target="_blank" rel="noopener noreferrer">https://reddit.com/r/startups/syn007</a> — <span class="evidence-meta">u/gabe_builds · r/startups</span><blockquote>I looked at every popular CRM and they all cost more than my monthly revenue. There is no solution priced for solo founders. It&#x27;s so frustrating, I would pay for a lightweight…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/startups, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « There is no solution priced for solo founders. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#5 — saisie de données manuelle</h2>
+        <div class="score-badge">Score : 41.9/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">I run a small consulting shop and every Friday I have to manually copy line items from client emails into an Excel invoice template.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 272.</li><li>4/5 catégories de signaux de douleur détectées : frustration, manual_work, missing_solution, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/smallbusiness/syn001" target="_blank" rel="noopener noreferrer">https://reddit.com/r/smallbusiness/syn001</a> — <span class="evidence-meta">u/alice_freelance · r/smallbusiness</span><blockquote>I run a small consulting shop and every Friday I have to manually copy line items from client emails into an Excel invoice template. There&#x27;s no good solution for this at our…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/smallbusiness, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « I run a small consulting shop and every Friday I have to manually copy line items from client emails into an Excel invoice template. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#6 — facturation / paiements</h2>
+        <div class="score-badge">Score : 41.5/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">Every month I manually go line by line between Stripe payouts and QuickBooks entries because there&#x27;s no affordable integration.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 173.</li><li>4/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/freelance/syn002" target="_blank" rel="noopener noreferrer">https://reddit.com/r/freelance/syn002</a> — <span class="evidence-meta">u/bmoney_designs · r/freelance</span><blockquote>Every month I manually go line by line between Stripe payouts and QuickBooks entries because there&#x27;s no affordable integration. The existing tools cost $300/month which is way…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/freelance, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « Every month I manually go line by line between Stripe payouts and QuickBooks entries because there&#x27;s no affordable integration. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#7 — outils trop chers</h2>
+        <div class="score-badge">Score : 41.3/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">As a solo founder I can&#x27;t justify $500/month analytics tools.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 147.</li><li>4/5 catégories de signaux de douleur détectées : expensive_tools, frustration, missing_solution, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/SaaS/syn008" target="_blank" rel="noopener noreferrer">https://reddit.com/r/SaaS/syn008</a> — <span class="evidence-meta">u/hana_indie · r/SaaS</span><blockquote>As a solo founder I can&#x27;t justify $500/month analytics tools. There&#x27;s no missing solution gap that&#x27;s actually affordable for indie makers. I&#x27;d happily pay a fair price for…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/SaaS, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « As a solo founder I can&#x27;t justify $500/month analytics tools. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#8 — outils trop chers</h2>
+        <div class="score-badge">Score : 40.5/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">Every week I manually collect articles and manually format the newsletter HTML by hand.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 64.</li><li>4/5 catégories de signaux de douleur détectées : expensive_tools, manual_work, missing_solution, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/marketing/syn012" target="_blank" rel="noopener noreferrer">https://reddit.com/r/marketing/syn012</a> — <span class="evidence-meta">u/lena_writes · r/marketing</span><blockquote>Every week I manually collect articles and manually format the newsletter HTML by hand. It&#x27;s such a manual process and all the newsletter tools are expensive for a one-person…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/marketing, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « Every week I manually collect articles and manually format the newsletter HTML by hand. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#9 — saisie de données manuelle</h2>
+        <div class="score-badge">Score : 40.2/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">I manually dedupe contacts every week because our CRM&#x27;s built in tool misses obvious duplicates.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 50.</li><li>4/5 catégories de signaux de douleur détectées : frustration, manual_work, missing_solution, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/smallbusiness/syn013" target="_blank" rel="noopener noreferrer">https://reddit.com/r/smallbusiness/syn013</a> — <span class="evidence-meta">u/milo_sales · r/smallbusiness</span><blockquote>I manually dedupe contacts every week because our CRM&#x27;s built in tool misses obvious duplicates. So manual and frustrating, no solution fits a two-person team budget. Would pay…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/smallbusiness, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « I manually dedupe contacts every week because our CRM&#x27;s built in tool misses obvious duplicates. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#10 — saisie de données manuelle</h2>
+        <div class="score-badge">Score : 37.7/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">Our BI stack exports garbage CSVs and I spend hours every week manually cleaning columns before I can even start analysis.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 215.</li><li>3/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/dataanalysis/syn004" target="_blank" rel="noopener noreferrer">https://reddit.com/r/dataanalysis/syn004</a> — <span class="evidence-meta">u/dana_data · r/dataanalysis</span><blockquote>Our BI stack exports garbage CSVs and I spend hours every week manually cleaning columns before I can even start analysis. So frustrating that there&#x27;s no lightweight solution,…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/dataanalysis, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « Our BI stack exports garbage CSVs and I spend hours every week manually cleaning columns before I can even start analysis. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#11 — facturation / paiements</h2>
+        <div class="score-badge">Score : 37.3/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">I manually send follow-up emails to clients who haven&#x27;t paid their invoices, it&#x27;s such manual work with no good affordable solution for freelancers.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 148.</li><li>3/5 catégories de signaux de douleur détectées : frustration, manual_work, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/freelance/syn015" target="_blank" rel="noopener noreferrer">https://reddit.com/r/freelance/syn015</a> — <span class="evidence-meta">u/omar_writes · r/freelance</span><blockquote>I manually send follow-up emails to clients who haven&#x27;t paid their invoices, it&#x27;s such manual work with no good affordable solution for freelancers. I&#x27;d pay for automated payment…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/freelance, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « I manually send follow-up emails to clients who haven&#x27;t paid their invoices, it&#x27;s such manual work with no good affordable solution for freelancers. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#12 — contenu / marketing</h2>
+        <div class="score-badge">Score : 36.7/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">I manually schedule every newsletter and social post because the scheduling tools I can afford don&#x27;t support my workflow.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 80.</li><li>3/5 catégories de signaux de douleur détectées : frustration, manual_work, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/marketing/syn011" target="_blank" rel="noopener noreferrer">https://reddit.com/r/marketing/syn011</a> — <span class="evidence-meta">u/kai_growth · r/marketing</span><blockquote>I manually schedule every newsletter and social post because the scheduling tools I can afford don&#x27;t support my workflow. Such manual work every single week, extremely…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/marketing, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « I manually schedule every newsletter and social post because the scheduling tools I can afford don&#x27;t support my workflow. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+    <article class="opportunity-card">
+      <header>
+        <h2>#13 — facturation / paiements</h2>
+        <div class="score-badge">Score : 33.1/100</div>
+        <div class="confidence confidence-medium">Confiance : moyenne</div>
+        <div class="market-evidence">Preuve de marché (Reddit) : faible</div>
+      </header>
+
+      <section>
+        <h3>Énoncé du problème</h3>
+        <p class="problem-statement">I do freelance photography and manually create every invoice from scratch in Word.</p>
+      </section>
+
+      <section>
+        <h3>Pourquoi ce score ?</h3>
+        <ul class="reasons-list"><li>1 auteur(s) indépendant(s) évoquent ce problème.</li><li>Présent dans 1 subreddit(s) différent(s).</li><li>Engagement cumulé (score + commentaires) : 112.</li><li>2/5 catégories de signaux de douleur détectées : manual_work, willingness_to_pay.</li><li>1 post(s) regroupé(s) dans ce cluster (récurrence).</li></ul>
+      </section>
+
+      <section>
+        <h3>Preuves / extraits</h3>
+        <ul class="evidence-list"><li class="evidence-item"><a href="https://reddit.com/r/freelance/syn003" target="_blank" rel="noopener noreferrer">https://reddit.com/r/freelance/syn003</a> — <span class="evidence-meta">u/carla_shoots · r/freelance</span><blockquote>I do freelance photography and manually create every invoice from scratch in Word. It&#x27;s such a manual process and takes forever. I would pay good money for something that just…</blockquote></li></ul>
+      </section>
+
+      <section>
+        <h3>ICP suggéré</h3>
+        <p>Utilisateurs actifs sur r/freelance, confrontés à ce problème au quotidien.</p>
+      </section>
+
+      <section>
+        <h3>Idée de MVP</h3>
+        <p>Un outil ciblé et simple qui résout précisément : « I do freelance photography and manually create every invoice from scratch in Word. » — sans les fonctionnalités superflues des suites payantes existantes.</p>
+      </section>
+
+      <section>
+        <h3>Étapes de validation</h3>
+        <ol class="validation-steps"><li>Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.</li><li>Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d&#x27;attente.</li><li>Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.</li><li>Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché.</li></ol>
+      </section>
+
+      <section class="tam-sam-som">
+        <h3>TAM / SAM / SOM (hypothèses — à valider)</h3>
+        <p class="hypothesis-warning">
+          ⚠️ Ces chiffres sont des <strong>hypothèses de travail</strong>, pas des estimations fiables.
+          Le volume de discussions Reddit ne mesure pas la taille d'un marché : validez avec des sources
+          externes (études sectorielles, INSEE, enquêtes utilisateurs) avant toute décision d'investissement.
+        </p>
+        <ul>
+          <li><strong>TAM (hypothèse)</strong> : à définir selon le nombre total d'entreprises/utilisateurs concernés.</li>
+          <li><strong>SAM (hypothèse)</strong> : à définir selon le sous-segment atteignable par vos canaux.</li>
+          <li><strong>SOM (hypothèse)</strong> : à définir selon votre capacité réaliste de conversion au lancement.</li>
+        </ul>
+      </section>
+    </article>
+    
+  <footer>
+    Reddit Pain Radar — proof of concept, données synthétiques ou publiques uniquement, aucune clé API requise.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,521 @@
+{
+  "generated_at": "2026-09-05T13:04:12.250620+00:00",
+  "source_description": "fixture: fixtures/sample_posts.json",
+  "disclaimer": "Ce rapport analyse des discussions publiques sur Reddit (échantillon fixture ou flux RSS bornés). Le nombre de posts/auteurs Reddit ne constitue en aucun cas une estimation de marché (TAM/SAM/SOM). Toute taille de marché mentionnée est une hypothèse à valider avec des sources externes.",
+  "opportunities": [
+    {
+      "label": "outils trop chers",
+      "problem_statement": "I manually copy-paste data from our CRM export into Google Sheets every single day, it's such manual work and there's no solution for our budget.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/excel, r/startups, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « I manually copy-paste data from our CRM export into Google Sheets every single day, it's such manual work and there's no solution for our budget. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 55.3,
+        "reasons": [
+          "2 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 2 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 301.",
+          "5/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution, willingness_to_pay.",
+          "2 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "modérée"
+      },
+      "evidence": [
+        {
+          "post_id": "syn005",
+          "author": "eli_ops",
+          "subreddit": "excel",
+          "url": "https://reddit.com/r/excel/syn005",
+          "excerpt": "I manually copy-paste data from our CRM export into Google Sheets every single day, it's such manual work and there's no solution for our budget. Willing to pay for anything that…"
+        },
+        {
+          "post_id": "syn009",
+          "author": "ivan_support",
+          "subreddit": "startups",
+          "url": "https://reddit.com/r/startups/syn009",
+          "excerpt": "Our small team manually replies to nearly identical customer support emails every day. It's incredibly manual work and there's no solution within our budget, the AI helpdesk…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "support client",
+      "problem_statement": "We manually sort and tag every incoming support ticket by hand because we can't afford the expensive helpdesk suites.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/CustomerSuccess, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « We manually sort and tag every incoming support ticket by hand because we can't afford the expensive helpdesk suites. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 44.8,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 90.",
+          "5/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn010",
+          "author": "jae_cx",
+          "subreddit": "CustomerSuccess",
+          "url": "https://reddit.com/r/CustomerSuccess/syn010",
+          "excerpt": "We manually sort and tag every incoming support ticket by hand because we can't afford the expensive helpdesk suites. So frustrating, there is no lightweight missing solution for…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "saisie de données manuelle",
+      "problem_statement": "I get dozens of supplier PDFs weekly and manually type the numbers into a spreadsheet.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/dataanalysis, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « I get dozens of supplier PDFs weekly and manually type the numbers into a spreadsheet. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 44.6,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 75.",
+          "5/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn006",
+          "author": "farah_analytics",
+          "subreddit": "dataanalysis",
+          "url": "https://reddit.com/r/dataanalysis/syn006",
+          "excerpt": "I get dozens of supplier PDFs weekly and manually type the numbers into a spreadsheet. It is extremely manual and there is no missing solution for small teams, all the OCR tools…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "outils trop chers",
+      "problem_statement": "There is no solution priced for solo founders.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/startups, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « There is no solution priced for solo founders. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 42.1,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 322.",
+          "4/5 catégories de signaux de douleur détectées : expensive_tools, frustration, missing_solution, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn007",
+          "author": "gabe_builds",
+          "subreddit": "startups",
+          "url": "https://reddit.com/r/startups/syn007",
+          "excerpt": "I looked at every popular CRM and they all cost more than my monthly revenue. There is no solution priced for solo founders. It's so frustrating, I would pay for a lightweight…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "saisie de données manuelle",
+      "problem_statement": "I run a small consulting shop and every Friday I have to manually copy line items from client emails into an Excel invoice template.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/smallbusiness, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « I run a small consulting shop and every Friday I have to manually copy line items from client emails into an Excel invoice template. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 41.9,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 272.",
+          "4/5 catégories de signaux de douleur détectées : frustration, manual_work, missing_solution, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn001",
+          "author": "alice_freelance",
+          "subreddit": "smallbusiness",
+          "url": "https://reddit.com/r/smallbusiness/syn001",
+          "excerpt": "I run a small consulting shop and every Friday I have to manually copy line items from client emails into an Excel invoice template. There's no good solution for this at our…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "facturation / paiements",
+      "problem_statement": "Every month I manually go line by line between Stripe payouts and QuickBooks entries because there's no affordable integration.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/freelance, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « Every month I manually go line by line between Stripe payouts and QuickBooks entries because there's no affordable integration. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 41.5,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 173.",
+          "4/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work, missing_solution.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn002",
+          "author": "bmoney_designs",
+          "subreddit": "freelance",
+          "url": "https://reddit.com/r/freelance/syn002",
+          "excerpt": "Every month I manually go line by line between Stripe payouts and QuickBooks entries because there's no affordable integration. The existing tools cost $300/month which is way…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "outils trop chers",
+      "problem_statement": "As a solo founder I can't justify $500/month analytics tools.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/SaaS, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « As a solo founder I can't justify $500/month analytics tools. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 41.3,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 147.",
+          "4/5 catégories de signaux de douleur détectées : expensive_tools, frustration, missing_solution, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn008",
+          "author": "hana_indie",
+          "subreddit": "SaaS",
+          "url": "https://reddit.com/r/SaaS/syn008",
+          "excerpt": "As a solo founder I can't justify $500/month analytics tools. There's no missing solution gap that's actually affordable for indie makers. I'd happily pay a fair price for…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "outils trop chers",
+      "problem_statement": "Every week I manually collect articles and manually format the newsletter HTML by hand.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/marketing, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « Every week I manually collect articles and manually format the newsletter HTML by hand. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 40.5,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 64.",
+          "4/5 catégories de signaux de douleur détectées : expensive_tools, manual_work, missing_solution, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn012",
+          "author": "lena_writes",
+          "subreddit": "marketing",
+          "url": "https://reddit.com/r/marketing/syn012",
+          "excerpt": "Every week I manually collect articles and manually format the newsletter HTML by hand. It's such a manual process and all the newsletter tools are expensive for a one-person…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "saisie de données manuelle",
+      "problem_statement": "I manually dedupe contacts every week because our CRM's built in tool misses obvious duplicates.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/smallbusiness, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « I manually dedupe contacts every week because our CRM's built in tool misses obvious duplicates. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 40.2,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 50.",
+          "4/5 catégories de signaux de douleur détectées : frustration, manual_work, missing_solution, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn013",
+          "author": "milo_sales",
+          "subreddit": "smallbusiness",
+          "url": "https://reddit.com/r/smallbusiness/syn013",
+          "excerpt": "I manually dedupe contacts every week because our CRM's built in tool misses obvious duplicates. So manual and frustrating, no solution fits a two-person team budget. Would pay…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "saisie de données manuelle",
+      "problem_statement": "Our BI stack exports garbage CSVs and I spend hours every week manually cleaning columns before I can even start analysis.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/dataanalysis, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « Our BI stack exports garbage CSVs and I spend hours every week manually cleaning columns before I can even start analysis. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 37.7,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 215.",
+          "3/5 catégories de signaux de douleur détectées : expensive_tools, frustration, manual_work.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn004",
+          "author": "dana_data",
+          "subreddit": "dataanalysis",
+          "url": "https://reddit.com/r/dataanalysis/syn004",
+          "excerpt": "Our BI stack exports garbage CSVs and I spend hours every week manually cleaning columns before I can even start analysis. So frustrating that there's no lightweight solution,…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "facturation / paiements",
+      "problem_statement": "I manually send follow-up emails to clients who haven't paid their invoices, it's such manual work with no good affordable solution for freelancers.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/freelance, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « I manually send follow-up emails to clients who haven't paid their invoices, it's such manual work with no good affordable solution for freelancers. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 37.3,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 148.",
+          "3/5 catégories de signaux de douleur détectées : frustration, manual_work, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn015",
+          "author": "omar_writes",
+          "subreddit": "freelance",
+          "url": "https://reddit.com/r/freelance/syn015",
+          "excerpt": "I manually send follow-up emails to clients who haven't paid their invoices, it's such manual work with no good affordable solution for freelancers. I'd pay for automated payment…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "contenu / marketing",
+      "problem_statement": "I manually schedule every newsletter and social post because the scheduling tools I can afford don't support my workflow.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/marketing, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « I manually schedule every newsletter and social post because the scheduling tools I can afford don't support my workflow. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 36.7,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 80.",
+          "3/5 catégories de signaux de douleur détectées : frustration, manual_work, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn011",
+          "author": "kai_growth",
+          "subreddit": "marketing",
+          "url": "https://reddit.com/r/marketing/syn011",
+          "excerpt": "I manually schedule every newsletter and social post because the scheduling tools I can afford don't support my workflow. Such manual work every single week, extremely…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    },
+    {
+      "label": "facturation / paiements",
+      "problem_statement": "I do freelance photography and manually create every invoice from scratch in Word.",
+      "confidence": "moyenne",
+      "suggested_icp": "Utilisateurs actifs sur r/freelance, confrontés à ce problème au quotidien.",
+      "mvp_idea": "Un outil ciblé et simple qui résout précisément : « I do freelance photography and manually create every invoice from scratch in Word. » — sans les fonctionnalités superflues des suites payantes existantes.",
+      "validation_steps": [
+        "Interroger 5 à 10 auteurs des posts cités pour valider le problème et le budget disponible.",
+        "Publier une landing page décrivant la solution et mesurer les inscriptions à la liste d'attente.",
+        "Construire un prototype minimal (MVP) et le tester avec 3 utilisateurs issus des subreddits identifiés.",
+        "Vérifier des sources externes (études de marché, données Google Trends) avant tout chiffrage de marché."
+      ],
+      "score": {
+        "total": 33.1,
+        "reasons": [
+          "1 auteur(s) indépendant(s) évoquent ce problème.",
+          "Présent dans 1 subreddit(s) différent(s).",
+          "Engagement cumulé (score + commentaires) : 112.",
+          "2/5 catégories de signaux de douleur détectées : manual_work, willingness_to_pay.",
+          "1 post(s) regroupé(s) dans ce cluster (récurrence)."
+        ],
+        "market_evidence_state": "faible"
+      },
+      "evidence": [
+        {
+          "post_id": "syn003",
+          "author": "carla_shoots",
+          "subreddit": "freelance",
+          "url": "https://reddit.com/r/freelance/syn003",
+          "excerpt": "I do freelance photography and manually create every invoice from scratch in Word. It's such a manual process and takes forever. I would pay good money for something that just…"
+        }
+      ],
+      "market_size_hypotheses": {
+        "note": "Hypothèses non validées, à confirmer avec des sources de marché externes (INSEE, rapports sectoriels, etc.).",
+        "tam": "Hypothèse : à définir selon le nombre total d'entreprises/utilisateurs concernés par ce problème.",
+        "sam": "Hypothèse : à définir selon le sous-segment atteignable par les canaux de distribution envisagés.",
+        "som": "Hypothèse : à définir selon la capacité réaliste de conversion en phase de lancement."
+      }
+    }
+  ]
+}
