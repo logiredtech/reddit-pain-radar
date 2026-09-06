@@ -1,0 +1,23 @@
+{
+  "name": "reddit-pain-radar",
+  "version": "0.2.0",
+  "description": "Explainable pain-point/opportunity detector over Reddit discussions (fixture pipeline or Reddit OAuth Data API).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "pretest": "npm run build",
+    "test": "node --test dist/test/*.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "predemo": "npm run build",
+    "demo": "node dist/src/cli.js --fixture fixtures/sample_posts.json --out-json reports/demo.json --out-html reports/demo.html",
+    "prelive": "npm run build",
+    "live": "node dist/src/cli.js --live smallbusiness,freelance,startups --max-items 15 --timeout 8000 --delay 2000 --out-json reports/live.json --out-html reports/live.html"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

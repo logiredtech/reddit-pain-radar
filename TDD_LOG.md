@@ -1,239 +1,117 @@
-# Journal TDD — Reddit Pain Radar
+# Journal TDD — Reddit Pain Radar (TypeScript)
 
-Chaque section correspond à une tranche verticale (vertical slice) développée en TDD strict :
-RED (test écrit, exécuté, échec constaté) → GREEN (implémentation minimale, test passe) → REFACTOR (nettoyage, tests toujours au vert).
+Migration complète de Python vers TypeScript, en TDD strict par tranche verticale :
+RED (test écrit dans `test/`, `tsc` échoue avec « Cannot find module »/erreur de compilation) →
+GREEN (implémentation minimale dans `src/`, `npm test` passe) → REFACTOR si nécessaire.
 
-Commandes utilisées pour exécuter les tests d'un seul module :
-`python3 -m unittest tests.test_<module> -v`
-
----
-
-## Slice 1 — Modèle de données + ingestion fixture (`painradar/models.py`, `painradar/ingest.py`)
-
-**RED**
-```
-python3 -m unittest tests.test_ingest -v
-```
-Résultat : `ModuleNotFoundError: No module named 'painradar.models'` (échec attendu, aucun code implémenté).
-
-**GREEN**
-Implémentation de `Post.from_dict` (dataclass typée, validation des champs requis) et `load_posts_from_fixture`
-(chargement JSON, erreurs explicites via `IngestError` pour fichier manquant / JSON invalide / champ manquant).
-Création de `fixtures/sample_posts.json` avec 15 posts synthétiques (`"synthetic": true`), dont un post hors-sujet
-(bruit) pour valider que le futur détecteur de signaux ne remonte pas de faux positifs.
-
-```
-python3 -m unittest tests.test_ingest -v
-```
-Résultat : `Ran 4 tests in 0.002s — OK`.
-
-**REFACTOR** : aucun nécessaire, code déjà minimal et lisible.
+Commande utilisée pour un run complet : `npm test` (compile puis exécute `node --test dist/test/*.js`).
 
 ---
 
-## Slice 2 — Normalisation de texte + détection des signaux de douleur (`painradar/textnorm.py`, `painradar/signals.py`)
+## Slice 1 — Modèle de données + ingestion fixture (`src/models.ts`, `src/ingest.ts`)
 
-**RED**
-```
-python3 -m unittest tests.test_signals -v
-```
-Résultat : `ModuleNotFoundError: No module named 'painradar.textnorm'` (échec attendu).
+RED : `test/test_ingest.ts` ajouté → `tsc` échoue avec
+`Cannot find module '../src/models.js'` / `'../src/ingest.js'`.
 
-**GREEN**
-Implémentation de `normalize_text` (minuscule, suppression des URLs, espaces normalisés) et `tokenize` (tokens
-utiles pour le futur clustering). Implémentation de `detect_pain_signals` : règles regex explicites et lisibles,
-regroupées en 5 catégories transparentes (`manual_work`, `expensive_tools`, `missing_solution`, `frustration`,
-`willingness_to_pay`), avec le "pourquoi" du match conservé (`matched_phrases`) pour l'explicabilité du score.
+GREEN : `postFromRecord` (validation des champs requis + coercition typée) et
+`loadPostsFromFixture` (erreurs explicites via `IngestError` pour fichier manquant,
+JSON invalide, JSON non-liste, champ manquant ou de mauvais type). 7 tests OK.
 
-```
-python3 -m unittest tests.test_signals -v
-```
-Résultat : `Ran 7 tests in 0.000s — OK`.
+## Slice 2 — Normalisation de texte + signaux de douleur (`src/textnorm.ts`, `src/signals.ts`)
 
-**REFACTOR** : aucun nécessaire.
+RED : `tsc` échoue, modules absents. GREEN : `normalizeText`/`tokenize` (stopwords)
+et `detectPainSignals` (5 catégories regex identiques au POC Python). 8 tests OK.
 
----
+## Slice 3 — Extraction de l'énoncé du problème (`src/problem.ts`)
 
-## Slice 3 — Extraction de l'énoncé du problème (`painradar/problem.py`)
+RED → GREEN : `extractProblemStatement` découpe en phrases, retient la première
+phrase à signal de douleur, sinon retombe sur le titre ; troncature à 220 caractères.
+4 tests OK.
 
-**RED**
-```
-python3 -m unittest tests.test_problem -v
-```
-Résultat : `ModuleNotFoundError: No module named 'painradar.problem'` (échec attendu).
+## Slice 4 — Clustering déterministe par similarité de Jaccard (`src/clustering.ts`)
 
-**GREEN**
-`extract_problem_statement` découpe le corps du post en phrases, retient la première phrase contenant un signal de
-douleur détecté (réutilise `detect_pain_signals`), et retombe sur le titre si aucune phrase ne matche. Troncature
-propre à 220 caractères sur une limite de mot.
+RED → GREEN : `jaccardSimilarity` + `clusterPosts` (glouton, trié par id de post,
+seuil `SIMILARITY_THRESHOLD = 0.2`), `Cluster.label` dérivé de mots-clés. 7 tests OK.
 
-```
-python3 -m unittest tests.test_problem -v
-```
-Résultat : `Ran 4 tests in 0.001s — OK`.
+## Slice 5 — Score d'opportunité explicable (`src/scoring.ts`)
 
-**REFACTOR** : aucun nécessaire.
+RED → GREEN : `scoreCluster` combine 5 facteurs saturants pondérés (auteurs,
+subreddits, engagement `log1p`, diversité de signaux, récurrence), borné à 100,
+raisons explicables en français, `marketEvidenceState`. Une régression RED (`totalScore` était `NaN`) borne maintenant
+chaque contribution d'engagement à zéro avant `log1p`, affiche le total non négatif effectif dans les raisons et
+garantit un résultat fini entre 0 et 100. 7 tests OK.
 
----
+## Slice 6 — Construction des opportunités (`src/opportunity.ts`)
 
-## Slice 4 — Clustering déterministe par similarité de Jaccard (`painradar/clustering.py`)
+RED → GREEN : `buildOpportunities` assemble chaque `Cluster` en `Opportunity`
+(problème, score, confiance, ICP, idée de MVP, étapes de validation, preuves),
+triées par score décroissant. 4 tests OK.
 
-**RED**
-```
-python3 -m unittest tests.test_clustering -v
-```
-Résultat : `ModuleNotFoundError: No module named 'painradar.clustering'` (échec attendu).
+## Slice 7 — Rapport JSON structuré (`src/reportJson.ts`)
 
-**GREEN**
-`jaccard_similarity` (opérations pures sur sets) + `cluster_posts` : algorithme glouton stable (tri par id de post,
-puis rattachement au premier cluster existant dont l'union de tokens dépasse `SIMILARITY_THRESHOLD=0.2`, sinon
-nouveau cluster). Un `Cluster.label` dérive un intitulé lisible via un dictionnaire de mots-clés de catégories
-(uniquement pour l'affichage, pas pour le calcul de similarité).
+RED → GREEN : `buildReportDict` sérialise en objet JSON-safe avec avertissement
+TAM/SAM/SOM explicite. 1 test OK.
 
-```
-python3 -m unittest tests.test_clustering -v
-```
-Résultat : `Ran 7 tests in 0.000s — OK`.
+## Slice 8 — Rapport HTML autonome, échappement strict (`src/reportHtml.ts`)
 
-**REFACTOR** : extension de la liste `STOPWORDS` dans `textnorm.py` (mots de remplissage supplémentaires) pour
-réduire le bruit tokenisé sans casser les tests existants (`tests.test_signals` + `tests.test_clustering` relancés
-en même temps : `Ran 14 tests — OK`).
+RED → GREEN : `renderHtmlReport` échappe tout contenu utilisateur (`escapeHtml`)
+et neutralise les URLs non http/https (`safeHref`, retombe sur `#`). 5 tests OK,
+dont un test XSS explicite sur `javascript:` en tant qu'URL de preuve.
 
----
+## Slice 9 — Pipeline bout-en-bout (`src/pipeline.ts`)
 
-## Slice 5 — Score d'opportunité explicable (`painradar/scoring.py`)
+RED → GREEN : `runPipeline` enchaîne filtrage des posts sans signal de douleur →
+clustering → opportunités → rapports JSON/HTML. 3 tests OK, y compris l'exclusion
+des posts neutres et le cas liste vide.
 
-**RED**
-```
-python3 -m unittest tests.test_scoring -v
-```
-Résultat : `ModuleNotFoundError: No module named 'painradar.scoring'` (échec attendu).
+## Slice 10 — Adaptateur Reddit OAuth Data API (`src/redditApi.ts`)
 
-**GREEN**
-`score_cluster` combine 5 facteurs indépendants et pondérés (auteurs indépendants, diversité de subreddits,
-engagement cumulé avec `log1p` pour éviter qu'un seul post viral écrase le score, diversité des catégories de
-signaux de douleur, récurrence du cluster). Chaque facteur utilise une fonction saturante (`value/(value+half_point)`)
-pour un rendement décroissant, borné à `MAX_SCORE=100`. `ScoreResult.reasons` documente chaque contribution en
-français. `market_evidence_state` (faible/modérée/forte) reflète la robustesse de la preuve Reddit — jamais présenté
-comme une taille de marché.
+Remplace intégralement l'ancien collecteur RSS (`painradar/live.py`, supprimé).
+RED → GREEN, avec transport HTTP injecté (`FetchLike`) pour ne jamais appeler
+Reddit pendant les tests :
 
-```
-python3 -m unittest tests.test_scoring -v
-```
-Résultat : `Ran 6 tests in 0.002s — OK`.
+- `loadCredentialsFromEnv` : lit uniquement `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET`,
+  `REDDIT_USER_AGENT` ; lève `RedditAuthError` si un de ces trois manque.
+- `fetchAccessToken` : `POST https://www.reddit.com/api/v1/access_token` en
+  `grant_type=client_credentials` (application-only), en-tête `Authorization: Basic`
+  construit à partir des identifiants, jamais loggé ni persisté.
+- `fetchSubredditListing` : `GET https://oauth.reddit.com/r/<sub>/new`, valide le nom
+  de subreddit par une regex stricte (`^[A-Za-z0-9_]{1,21}$`) avant de construire
+  l'URL (aucune injection possible), borne `limit` à 100, parse les en-têtes
+  `x-ratelimit-used/remaining/reset` (valeur absente, mal formée ou non finie → `null`), valide chaque enfant et
+  ses champs sans coercition 32 bits (`score` entier sûr éventuellement négatif, `num_comments` entier sûr positif
+  ou nul, `created_utc` fini positif ou nul, champs texte requis et valeurs Reddit nullables admises), et rapporte
+  explicitement 401/403/429 et toute erreur réseau/JSON sans jamais relancer de requête automatiquement.
+- `collectRedditPosts` : un seul jeton pour plusieurs subreddits, délai poli entre
+  requêtes, résultats partiels conservés si un subreddit échoue.
 
-**REFACTOR** : aucun nécessaire.
+Les régressions RED observaient l'acceptation d'un enfant mal typé et des valeurs `NaN`/`Infinity` dans les en-têtes.
+18 tests OK (jeton, échec d'authentification, credentials manquants, nom de
+subreddit invalide, parsing de listing borné par `maxItems`, 401, 403, 429 sans
+retry, erreur réseau, validation runtime et collecte multi-subreddits poursuivie après enfant mal formé).
 
----
+## Slice 11 — CLI (`src/cli.ts`)
 
-## Slice 6 — Construction des opportunités (`painradar/opportunity.py`)
-
-**RED** : `python3 -m unittest tests.test_opportunity -v` → `ModuleNotFoundError: No module named 'painradar.opportunity'`.
-
-**GREEN** : `build_opportunities` transforme chaque `Cluster` en `Opportunity` (énoncé du problème via `problem.py`,
-score via `scoring.py`, confiance dérivée du score, ICP suggéré à partir des subreddits, idée de MVP, étapes de
-validation génériques mais concrètes, preuves = extraits + liens vers les posts sources). Tri final par score
-décroissant.
-
-`python3 -m unittest tests.test_opportunity -v` → `Ran 4 tests in 0.001s — OK`.
-
-**REFACTOR** : aucun nécessaire.
+RED : `test/test_cli.ts` spawn `node dist/src/cli.js` → `Cannot find module
+'dist/src/cli.js'`. GREEN : parseur d'arguments minimal (`--fixture`, `--live`,
+`--max-items`, `--timeout`, `--delay`, `--out-json`, `--out-html`), mode fixture
+par défaut, mode `--live` utilisant `redditApi` avec un `fetch` borné par
+`AbortController`/timeout. Les erreurs (`IngestError`, `RedditAuthError`) sont
+interceptées et écrites sur stderr avec un code de sortie non nul, sans trace
+Node brute. Les régressions de revue refusent avant lecture/écriture/réseau les alias entre sorties et, en mode
+fixture, entre fixture et sortie. RED observé pour l'égalité directe fixture/sortie, deux liens symboliques (y
+compris pendants) vers une même cible et deux liens physiques ; la résolution couvre aussi les parents symboliques
+avec feuille inexistante via le plus proche ancêtre existant. Une régression RED supplémentaire reproduit un composant
+de répertoire symbolique suivi de `..`, pour une paire sortie/sortie prospective et pour fixture/sortie avec vérification
+bout-en-bout de non-écrasement. La canonicalisation suit la sémantique native du système de fichiers avant de normaliser
+les segments encore inexistants, puis compare `dev` + `ino` pour les fichiers existants.
+Le mode `--live` ignore volontairement le fixture puisqu'il n'est pas lu. Les temporisations `--timeout` et
+`--delay` restent bornées à 2 147 483 647 ms. 20 tests CLI OK, dont la vérification bout-en-bout qu'un fixture alias
+reste intact et celle que le mode `--live` sans identifiants échoue explicitement en mentionnant
+`REDDIT_CLIENT_ID`.
 
 ---
 
-## Slice 7 — Rapport JSON structuré (`painradar/report_json.py`)
-
-**RED** : `python3 -m unittest tests.test_report_json -v` → `ModuleNotFoundError: No module named 'painradar.report_json'`.
-
-**GREEN** : `build_report_dict` sérialise la liste d'opportunités en dict JSON-safe (horodatage, description de la
-source, avertissement TAM/SAM/SOM explicite, opportunités avec score/raisons/preuves/hypothèses de marché).
-
-`python3 -m unittest tests.test_report_json -v` → `Ran 1 test in 0.000s — OK`.
-
-**REFACTOR** : aucun nécessaire.
-
----
-
-## Slice 8 — Rapport HTML autonome en français, avec échappement strict (`painradar/report_html.py`)
-
-**RED** : `python3 -m unittest tests.test_report_html -v` → `ModuleNotFoundError: No module named 'painradar.report_html'`.
-
-**GREEN** : `render_html_report` construit une page HTML autonome (CSS inline, pas de dépendance externe). Toute
-donnée provenant des posts (auteur, subreddit, extrait, URL) passe par `html.escape(..., quote=True)` via le
-helper `_e`. Les URLs sont en plus filtrées par `_safe_href` (seuls les schémas http/https sont autorisés comme
-`href`, sinon `#`) pour bloquer les payloads `javascript:`. Premier run : échec sur le test de contenu français
-(`assertIn("Opportunités", html)`) car le titre utilisait un "o" minuscule — corrigé en une ligne.
-
-```
-python3 -m unittest tests.test_report_html -v
-```
-Résultat après correction : `Ran 4 tests in 0.001s — OK`.
-
-**REFACTOR** : aucun nécessaire au-delà de la correction de casse ci-dessus.
-
----
-
-## Slice 9 — Collecte live bornée via flux RSS/Atom Reddit (`painradar/live.py`)
-
-**RED** : `python3 -m unittest tests.test_live -v` → `ModuleNotFoundError: No module named 'painradar.live'`.
-
-**GREEN** : `fetch_subreddit_feed` récupère `https://www.reddit.com/r/<sub>/.rss` via `urllib.request` (stdlib
-seule), avec User-Agent explicite, timeout obligatoire, et parsing via `xml.etree.ElementTree` gérant à la fois
-Atom (`<feed><entry>`) et RSS 2.0 (`<rss><channel><item>`). Toutes les erreurs sont interceptées et renvoyées sous
-forme de données (`FeedResult.ok=False` + message en français), jamais levées : XML malformé, HTTP 429 (rate limit),
-HTTP 403 (accès refusé), erreurs réseau (`URLError`). `collect_live_posts` orchestre plusieurs subreddits avec un
-délai poli (`delay_seconds`) entre requêtes et continue même si un flux échoue (résultats partiels + erreurs par
-subreddit). Aucun contournement de blocage (pas de rotation d'IP/UA, pas de retry agressif).
-
-```
-python3 -m unittest tests.test_live -v
-```
-Résultat : `Ran 10 tests in 0.003s — OK` (implémentation correcte dès la première passe GREEN, aucun refactor requis).
-
-**REFACTOR** : suppression d'un import redondant (`urllib.request` en plus de `from urllib.request import ...`).
-
----
-
-## Slice 10 — Orchestration pipeline + CLI (`painradar/pipeline.py`, `painradar/cli.py`, `painradar/__main__.py`)
-
-**RED (pipeline)** : `python3 -m unittest tests.test_pipeline -v` → `ModuleNotFoundError: No module named 'painradar.pipeline'`.
-
-**GREEN (pipeline)** : `run_pipeline` enchaîne `cluster_posts -> build_opportunities -> build_report_dict` +
-`render_html_report`. `python3 -m unittest tests.test_pipeline -v` → `Ran 2 tests in 0.005s — OK`.
-
-**RED (cli)** : `python3 -m unittest tests.test_cli -v` → échec avec
-`No module named painradar.__main__; 'painradar' is a package and cannot be directly executed` (le module CLI
-n'existait pas encore — échec attendu conforme à la RED).
-
-**GREEN (cli)** : `argparse` avec mode fixture par défaut (`--fixture`) et mode live optionnel (`--live
-sub1,sub2` avec `--max-items`, `--timeout`, `--delay`, `--user-agent`). Écrit les rapports JSON/HTML sur disque
-(création des dossiers parents si besoin). Les erreurs d'ingestion (`IngestError`) sont interceptées et
-affichées proprement sur stderr avec code de sortie 1, sans trace Python brute.
-
-```
-python3 -m unittest tests.test_cli -v
-```
-Résultat : `Ran 2 tests in 0.134s — OK`.
-
-**REFACTOR** : aucun nécessaire.
-
----
-
-## Slice 11 — Exclusion des posts sans signal de douleur
-
-**RED** : ajout de `test_posts_without_pain_signals_are_excluded`, puis exécution ciblée. Le test échoue comme
-attendu : un fil promotionnel neutre produisait encore une opportunité.
-
-```bash
-python3 -m unittest tests.test_pipeline.TestRunPipeline.test_posts_without_pain_signals_are_excluded -v
-```
-
-Résultat RED : `FAILED (failures=1)`.
-
-**GREEN** : `run_pipeline` filtre désormais les posts dont le titre et le corps ne déclenchent aucune catégorie
-explicite de `detect_pain_signals` avant le clustering.
-
-Résultat GREEN ciblé : `Ran 1 test — OK`.
-
-Vérification complète : `make test` → `Ran 55 tests — OK`; `make demo` → 15 posts analysés et 13 opportunités.
-Le nouveau run live borné a analysé 5 posts et produit 0 opportunité plutôt que des faux positifs.
+**Total : 84 tests, `npm test` (build + `node --test dist/test/*.js`) → 84/84 OK.**
+Aucun test n'appelle Reddit en direct ni ne nécessite d'identifiants : tout le
+transport HTTP est injecté et simulé.

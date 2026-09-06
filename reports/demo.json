@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-05T13:04:12.250620+00:00",
+  "generated_at": "2026-09-06T23:09:02.205Z",
   "source_description": "fixture: fixtures/sample_posts.json",
-  "disclaimer": "Ce rapport analyse des discussions publiques sur Reddit (échantillon fixture ou flux RSS bornés). Le nombre de posts/auteurs Reddit ne constitue en aucun cas une estimation de marché (TAM/SAM/SOM). Toute taille de marché mentionnée est une hypothèse à valider avec des sources externes.",
+  "disclaimer": "Ce rapport analyse des discussions publiques sur Reddit (échantillon fixture ou API OAuth bornée). Le nombre de posts/auteurs Reddit ne constitue en aucun cas une estimation de marché (TAM/SAM/SOM). Toute taille de marché mentionnée est une hypothèse à valider avec des sources externes.",
   "opportunities": [
     {
       "label": "outils trop chers",
